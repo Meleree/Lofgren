@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="preload" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Lofgren</title>
+    <meta name="description" content="DJ de zona oeste">
+    <link rel="shortcut icon" href="../images/istockphoto-868744106-612x612-removebg-preview.png" width="35px">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="no-js">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html"><img src="../images/Logo-Photo.webp" alt="Logo" width="80"></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="menu-buttons">
+        <div class="image-container">
+          <a href="/index.html"><img src="/images/DSC_0234.jpeg" alt="Profile Picture" width="100%"></a>
+          <div class="button-container">
+            <button class="section-btn" onclick="location.href='../index.html'">Inicio</button>
+            <button class="section-btn" onclick="location.href='/pages/bio.html'">Bio</button>
+            <button class="section-btn" onclick="location.href='/pages/fotos.html'">Fotos</button>
+            <button class="section-btn" onclick="location.href='/pages/podcast.html'">Podcast</button>
+            <button class="section-btn" onclick="location.href='/pages/videos.html'">Videos</button>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <h1>Videos</h1>
+        <section class="video-section">
+          <iframe class="video-iframe" data-video-id="H960rEjzNAc" width="560" height="315" src="https://www.youtube-nocookie.com/embed/H960rEjzNAc?si=PFw8wlnEtvlKqziQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        
+      </section>
+    </main>
+    <footer>
+      <nav class="links">
+        <a href="mailto:lofgrencamilajulieta@gmail.com">
+          <strong>E-mail</strong>
+          <span>lofgrencamilajulieta@gmail.com</span>
+        </a>
+        <a href="https://instagram.com/cami__lofgren?igsh=eWNuNnF3aTliMWZo">
+          <strong>Instagram</strong>
+          <span>@cami__lofgren</span>
+        </a>
+        <a href="https://on.soundcloud.com/nXUuUeing59D2NbR6">
+          <strong>SoundCloud</strong>
+          <span>@lofgren</span>
+        </a>
+        <a href="https://youtube.com/@lofgren.music.9?si=ufARppk5ROOf-wJO">
+          <strong>Youtube</strong>
+          <span>@lofgren.music.9</span>
+        </a>
+      </nav>
+    </footer>
+    <script src="/js/dark-mode.js"></script>
+    <script>
+      // Función para abrir el lightbox
+      function openLightbox(videoId) {
+        const lightbox = document.getElementById('video-lightbox');
+        const iframe = document.getElementById('lightbox-video');
+        
+        // Cambiar la URL del iframe al video que fue clickeado
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+        
+        // Mostrar el lightbox
+        lightbox.style.display = 'flex';
+      }
+
+      // Función para cerrar el lightbox
+      function closeLightbox() {
+        const lightbox = document.getElementById('video-lightbox');
+        const iframe = document.getElementById('lightbox-video');
+        
+        // Detener el video al cerrar el lightbox (limpiar el iframe)
+        iframe.src = '';
+        
+        // Ocultar el lightbox
+        lightbox.style.display = 'none';
+      }
+
+      // Agregar eventos a los videos
+      const videoIframes = document.querySelectorAll('.video-iframe');
+      videoIframes.forEach(iframe => {
+        iframe.addEventListener('click', function() {
+          const videoId = this.getAttribute('data-video-id');
+          openLightbox(videoId);
+        });
+      });
+
+      // Agregar evento para cerrar el lightbox
+      document.getElementById('close-lightbox').addEventListener('click', closeLightbox);
+    </script>
+
+    <!-- Contenedor Lightbox (oculto por defecto) -->
+    <div id="video-lightbox" class="lightbox">
+      <div class="lightbox-content">
+        <button id="close-lightbox" class="close">X</button>
+        <iframe id="lightbox-video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </body>
+</html>

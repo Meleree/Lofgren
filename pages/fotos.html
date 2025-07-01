@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="preload" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Lofgren</title>
+    <meta name="description" content="DJ de zona oeste">
+    <link rel="shortcut icon" href="../images/istockphoto-868744106-612x612-removebg-preview.png" width="35px">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="no-js">
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html"><img src="../images/Logo-Photo.webp" alt="Logo" width="80"></a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="menu-buttons">
+        <div class="image-container">
+          <a href="/index.html"><img src="/images/DSC_0234.jpeg" alt="Profile Picture" width="100%"></a>
+          <div class="button-container">
+            <button class="section-btn" onclick="location.href='../index.html'">Inicio</button>
+            <button class="section-btn" onclick="location.href='/pages/bio.html'">Bio</button>
+            <button class="section-btn" onclick="location.href='/pages/fotos.html'">Fotos</button>
+            <button class="section-btn" onclick="location.href='/pages/podcast.html'">Podcast</button>
+            <button class="section-btn" onclick="location.href='/pages/videos.html'">Videos</button>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <h1>Fotos</h1>
+        <div class="photo-grid">
+          <div>
+            <img src="/images/IMG_3883.JPG" onclick="openLightbox(0)">
+          </div>
+          <div>
+            <img src="/images/IMG_3873.JPG" onclick="openLightbox(1)">
+          </div>
+          <div>
+            <img src="/images/Copia de Cami-3.jpg" onclick="openLightbox(2)">
+          </div>
+          <div>
+            <img src="/images/IMG_4436.JPG" onclick="openLightbox(3)">
+          </div>
+          <div>
+            <img src="/images/_DSC0040.JPEG" onclick="openLightbox(4)">
+          </div>
+          <div>
+            <img src="/images/CMB08343-Mejorado-NR.jpeg" onclick="openLightbox(5)">
+          </div>
+          <div>
+            <img src="/images/CMB08309.jpeg" onclick="openLightbox(5)">
+          </div>
+          <div>
+            <img src="/images/IMG_3703.png" onclick="openLightbox(5)">
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>      
+      <nav class="links">
+        <a href="mailto:lofgrencamilajulieta@gmail.com">
+          <strong>E-mail</strong>
+          <span>lofgrencamilajulieta@gmail.com</span>
+        </a>
+        <a href="https://instagram.com/cami__lofgren?igsh=eWNuNnF3aTliMWZo">
+          <strong>Instagram</strong>
+          <span>@cami__lofgren</span>
+        </a>
+        <a href="https://on.soundcloud.com/nXUuUeing59D2NbR6">
+          <strong>SoundCloud</strong>
+          <span>@lofgren</span>
+        </a>
+        <a href="https://youtube.com/@lofgren.music.9?si=ufARppk5ROOf-wJO">
+          <strong>Youtube</strong>
+          <span>@lofgren.music.9</span>
+        </a>
+      </nav>
+    </footer>
+    <script src="/js/dark-mode.js"></script>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-image" src="" alt="Imagen en grande">
+      <span class="nav prev" onclick="changeImage(-1)">&#10094;</span>
+      <span class="nav next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <script>
+      var images = [
+        "/images/IMG_3883.JPG",
+        "/images/IMG_3873.JPG",
+        "/images/Copia de Cami-3.jpg",
+        "/images/IMG_4436.JPG",
+        "/images/_DSC0040.JPEG",
+        "/images/CMB08343-Mejorado-NR.jpeg",
+        "/images/CMB08309.jpeg",
+        "/images/IMG_3703.png"
+      ];
+
+      var currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        document.getElementById('lightbox-image').src = images[currentIndex];
+        document.getElementById('lightbox').style.display = 'flex';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+      }
+
+      function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+          currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+          currentIndex = 0;
+        }
+        document.getElementById('lightbox-image').src = images[currentIndex];
+      }
+    </script>
+  </body>
+</html>
