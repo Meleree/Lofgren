@@ -386,6 +386,28 @@ export default function App() {
         </div>
       </section>
 
+      {/* FOOTER - CREADO POR */}
+      <footer className="border-t border-zinc-800">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 flex justify-center">
+          <a
+            href="https://www.mgldesign.com.ar/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex flex-col items-center gap-3 group"
+          >
+            <span className="text-xs md:text-sm uppercase tracking-[0.12em] text-zinc-400 group-hover:text-zinc-300 transition">
+              Creado por
+            </span>
+
+            <img
+              src="/images/logo-horizontal.png"
+              alt="MGL Design"
+              className="h-8 md:h-10 w-auto object-contain opacity-90 group-hover:opacity-100 transition"
+            />
+          </a>
+        </div>
+      </footer>
+
       {/* LIGHTBOX CON FLECHAS */}
       {hasLightbox && (
         <div
