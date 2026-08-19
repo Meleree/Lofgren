@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  background: #060606;
+  color: white;
+  min-height: 100%;
+  margin: 0;
+  font-family: "Manrope", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: radial-gradient(#fff 0.7px, transparent 0.7px);
+  background-size: 3px 3px;
+}
